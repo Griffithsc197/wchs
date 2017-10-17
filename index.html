@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WCHS Morning News</title>
+<link href="main.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Archivo+Black:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:400,700" rel="stylesheet">
+<style type="text/css">
+@media (max-width: 1920px){
+}
+</style>
+</head>
+
+<body>
+<img src="images/0823170858.jpg" alt="" class="menu"/>
+    <ul class="menu">
+	<a href="index.html" class="menu" id="home">Home</a>
+	<a href="staff.html" class="menu">Staff</a>
+	<a href="contactus.html" class="menu">Contact Us</a>
+    </ul>
+
+<div id="video"> 
+  <h1 class="video">Today's Video</h1>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <iframe id="youtube_video" width="500" height="500" frameborder="0" allowfullscreen></iframe>
+
+    <script>
+var channelID = "UCQ8Lzvb0mSz0p5XAmZoW1zw";
+$.getJSON('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.youtube.com%2Ffeeds%2Fvideos.xml%3Fchannel_id%3D'+channelID, function(data) {
+   var link = data.items[0].link;
+   var id = link.substr(link.indexOf("=")+1);
+    $("#youtube_video").attr("src","https://youtube.com/embed/"+id + "?controls=0&showinfo=0&rel=0");
+});
+</script>
+</div>
+</body>
+
+<footer>
+ <div class="footer">
+ <img  class="footer" src="http://www.weatherforyou.net/fcgi-bin/hw3/hw3.cgi?config=png&amp;forecast=hourly&amp;alt=hwismallhourly&amp;place=inverness&amp;state=fl&amp;country=us&amp;hwvtc=black" width="190" height="90" border="0" alt="Latest Inverness, Florida, weather">
+ <a href="https://fspa.wildapricot.org/"><img src="images/fspa.png" alt="" class="footer" title="FSPA"/></a>    
+ <a href="http://www.baynews9.com/content/news/baynews9/sports/varsity-reporter/citrus-high-school.html"><img src="images/SpectrumSports.png" alt="" class="footer" title="Sports"/></a>
+	</div>
+	
+</footer>
+ 
+</html>
